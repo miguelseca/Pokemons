@@ -1,0 +1,5 @@
+<div class="pokemon-card-container">
+  <div *ngFor="let pokemon of pokedex; index as index">
+    <app-poke-card highlighted [pokemon]="pokedex[index]"></app-poke-card>
+  </div>
+</div>
