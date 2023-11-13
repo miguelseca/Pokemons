@@ -8,44 +8,36 @@ import {
 } from '@angular/core';
 
 @Directive({
-  selector: '[highlighted]',
+  selector: '[selected]',
   standalone: true,
-  exportAs: 'hl',
 })
 export class HighlightedDirective {
-  // @Input('highlighted')
-  // isHighlighted = false;
+  
+  @Input('selected')
+  isSelected = false;
 
   @Output()
-  toggleHighlight = new EventEmitter();
-
-  constructor() {
-    console.log('Directive created..');
-  }
+  toggleSelected = new EventEmitter();
 
   // @HostBinding('class.highlighted')
   // get cssClasses() {
   //   return this.isHighlighted;
   // }
-  @HostBinding('className')
+  @HostBinding('class.selected')
   get cssClasses() {
-    return "highlighted";
+    return this.isSelected;
   }
 
-  // @HostListener('mouseover', ['$event'])
-  //   mouseOver($event: any) {
-  //   this.isHighlighted = true;
-  //   this.toggleHighlight.emit(this.isHighlighted);
-  // }
+  @HostListener('mouseover', ['$event'])
+    mouseOver($event: any) {
+    this.isSelected = true;
+    this.toggleSelected.emit(this.isSelected);
+  }
 
-  // @HostListener('mouseleave')
-  // mouseLeave() {
-  //   this.isHighlighted = false;
-  //   this.toggleHighlight.emit(this.isHighlighted);
-  // }
+  @HostListener('mouseleave')
+  mouseLeave() {
+    this.isSelected = false;
+    this.toggleSelected.emit(this.isSelected);
+  }
 
-  // toggle() {
-  //   this.isHighlighted = !this.isHighlighted;
-  //   this.toggleHighlight.emit(this.isHighlighted);
-  // }
 }

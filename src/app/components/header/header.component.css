@@ -1,0 +1,22 @@
+.header {
+    background: #1976d2;
+    padding: 2px 15px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.links {
+
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+.link {
+    margin-left: 15px;
+
+}

@@ -5,15 +5,8 @@
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background-color: rgb(169, 221, 79);
+    width: 150px;
   }
-
-  /* .pokemon-card:hover {
-    background-color: rgb(48, 61, 26);
-    box-shadow: 0 6px 10px rgba(209, 16, 16, 0.2);
-    cursor: pointer;
-  } */
-
-
 
   .pokemon-image {
     width: 30px;
@@ -33,9 +26,17 @@
     margin: 0.5rem 0;
   }
   
+  .green {
+  
+    background-color: rgb(48, 61, 26);
+    box-shadow: 0 6px 10px rgba(209, 16, 16, 0.2);
+    cursor: pointer;
+  }
 
 
-  .highlighted {
 
-    background-color: aquamarine;
+  .selected {
+    background-color: rgb(48, 61, 26);
+    box-shadow: 0 6px 10px rgba(209, 16, 16, 0.2);
+    cursor: pointer;
   }

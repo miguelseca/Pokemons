@@ -4,7 +4,7 @@ export const ROUTES: Route[] = [
   {
     path: 'poke-list',
     loadComponent: () =>
-      import('./poke-list/poke-list.component').then(
+      import('./components/poke-list/poke-list.component').then(
         (mod) => mod.PokeListComponent
       ),
   },
@@ -12,11 +12,11 @@ export const ROUTES: Route[] = [
     path: '',
     pathMatch: 'full',
     loadComponent: () =>
-      import('./home/home.component').then((mod) => mod.HomeComponent),
+      import('./components/home/home.component').then((mod) => mod.HomeComponent),
   },
   {
     path: '**',
     loadComponent: () =>
-      import('./page404/page404.component').then((mod) => mod.Page404Component),
+      import('./components/page404/page404.component').then((mod) => mod.Page404Component),
   },
 ];

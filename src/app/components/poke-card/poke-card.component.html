@@ -1,0 +1,15 @@
+<div class="pokemon-card" [selected]="false" (click)="onSelectDetails()">
+  <img
+    *ngIf="pokemon.sprites.other.home.front_default"
+    src="{{ pokemon.sprites.other.home.front_default }}"
+    alt="{{ pokemon.name | titlecase }}"
+    class="pokemon-image"
+  />
+  <div class="pokemon-details">
+    <h2>{{ pokemon.name | titlecase }}</h2>
+    <p>Type: {{ pokemon.weight }}</p>
+    <p>Height: {{ pokemon.height | number: '.2'}}</p>
+    <p>Weight: {{ pokemon.weight }} kg</p>
+  </div>
+
+</div>

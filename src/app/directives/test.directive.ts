@@ -1,10 +1,27 @@
-import { Directive, HostBinding } from "@angular/core";
+import { Directive, HostBinding } from '@angular/core';
 
 @Directive({
-  selector: "[test]",
+  selector: '[test]',
   standalone: true,
 })
 export class TestDirective {
-  @HostBinding("class")
-  elementClass = "testi";
+  // @HostBinding("className")
+  // get cssClasses() {
+  //   return "pokemon-card green ";
+  // }
+
+  // @HostBinding("class.green")
+  // get cssClasses() {
+  //   return true;
+
+  // }
+
+  constructor() {
+    console.log("sadkfhbsjdfhbsdjhfb")
+;  }
+
+  @HostBinding('style.border')
+  get cssClasses() {
+    return '1px solid red';
+  }
 }
