@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Pokemon } from '../../models/pokemon';
 import { TestDirective } from 'src/app/directives/test.directive';
 import { HighlightedDirective } from 'src/app/directives/highlighted.directive';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-poke-card',
@@ -18,9 +19,10 @@ export class PokeCardComponent {
   @Output('pokemonSelected')
   pokemonSelected = new EventEmitter<Pokemon>();
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   onSelectDetails() {
      this.pokemonSelected.emit(this.pokemon);
+     this.router.navigate(['poke-detail', this.pokemon.id]);
   }
 }

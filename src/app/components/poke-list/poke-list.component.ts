@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PokemonService } from '../../services/pokemon.service';
 import { PokeCardComponent } from '../poke-card/poke-card.component';
 import { Pokemon } from '../../models/pokemon';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-poke-list',
@@ -14,14 +15,14 @@ import { Pokemon } from '../../models/pokemon';
 export class PokeListComponent implements OnInit {
   pokedex: Pokemon[] = [];
 
-  constructor(private pokemonService: PokemonService) {}
+  constructor(private router: Router, private pokemonService: PokemonService) {}
 
   ngOnInit() {
     this.getPokemon();
   }
 
   getPokemon() {
-    for (let i = 4; i < 40; i++) {
+    for (let i = 1; i < 40; i++) {
       this.pokemonService
         .getPokemon(i)
         .subscribe((result) => this.pokedex.push(result));
@@ -29,6 +30,7 @@ export class PokeListComponent implements OnInit {
   }
 
   onPokemonSelected($event: any) {
-    console.log($event);
+    this.router.navigate(['home']);
+    
   }
 }

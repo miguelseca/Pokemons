@@ -18,5 +18,13 @@
 
 .link {
     margin-left: 15px;
-
+    text-transform: uppercase;
+    cursor:pointer;
 }
+
+
+.link-active {
+    text-decoration: underline;
+    background-color: antiquewhite;
+  }
+  
